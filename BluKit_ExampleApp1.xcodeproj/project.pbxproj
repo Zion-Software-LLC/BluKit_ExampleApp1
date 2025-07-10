@@ -6,6 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		63A185DF2E15F15F00188917 /* BluetoothPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D62E15EBB700188917 /* BluetoothPeripheral.swift */; };
+		63A185E02E15F16600188917 /* PeripheralListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D72E15EBFC00188917 /* PeripheralListViewModel.swift */; };
+		63A185E12E15F16E00188917 /* PeripheralDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D82E15EC2800188917 /* PeripheralDetailViewModel.swift */; };
+		63A185E22E15F17500188917 /* PeripheralListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185DD2E15EFFB00188917 /* PeripheralListView.swift */; };
+		63A185E32E15F17B00188917 /* PeripheralDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185DE2E15F09200188917 /* PeripheralDetailView.swift */; };
+		63A185E72E1999DA00188917 /* PeripheralRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185E62E1999CC00188917 /* PeripheralRowView.swift */; };
+		63A185E92E199A0B00188917 /* SignalStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185E82E199A0500188917 /* SignalStrengthView.swift */; };
+		63A185F42E1C39DB00188917 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185F32E1C39DB00188917 /* ServiceDetailView.swift */; };
+		63A185F62E1C3A0C00188917 /* ServiceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185F52E1C3A0C00188917 /* ServiceDetailViewModel.swift */; };
+		63A185F82E1C3CA800188917 /* CharacteristicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185F72E1C3CA800188917 /* CharacteristicDetailView.swift */; };
+		63A185FA2E1C3D4200188917 /* CharacteristicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185F92E1C3D4200188917 /* CharacteristicDetailViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		635247A72E131CBB00E54EAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +41,17 @@
 		635247992E131CB800E54EAF /* BluKit_ExampleApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluKit_ExampleApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635247A62E131CBB00E54EAF /* BluKit_ExampleApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluKit_ExampleApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		635247B02E131CBB00E54EAF /* BluKit_ExampleApp1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluKit_ExampleApp1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A185D62E15EBB700188917 /* BluetoothPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPeripheral.swift; sourceTree = "<group>"; };
+		63A185D72E15EBFC00188917 /* PeripheralListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListViewModel.swift; sourceTree = "<group>"; };
+		63A185D82E15EC2800188917 /* PeripheralDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDetailViewModel.swift; sourceTree = "<group>"; };
+		63A185DD2E15EFFB00188917 /* PeripheralListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListView.swift; sourceTree = "<group>"; };
+		63A185DE2E15F09200188917 /* PeripheralDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDetailView.swift; sourceTree = "<group>"; };
+		63A185E62E1999CC00188917 /* PeripheralRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralRowView.swift; sourceTree = "<group>"; };
+		63A185E82E199A0500188917 /* SignalStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalStrengthView.swift; sourceTree = "<group>"; };
+		63A185F32E1C39DB00188917 /* ServiceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
+		63A185F52E1C3A0C00188917 /* ServiceDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewModel.swift; sourceTree = "<group>"; };
+		63A185F72E1C3CA800188917 /* CharacteristicDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicDetailView.swift; sourceTree = "<group>"; };
+		63A185F92E1C3D4200188917 /* CharacteristicDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +100,8 @@
 		635247902E131CB800E54EAF = {
 			isa = PBXGroup;
 			children = (
+				63A185D52E15EBA900188917 /* Views */,
+				63A185D42E15EBA100188917 /* Models */,
 				6352479B2E131CB800E54EAF /* BluKit_ExampleApp1 */,
 				635247A92E131CBB00E54EAF /* BluKit_ExampleApp1Tests */,
 				635247B32E131CBB00E54EAF /* BluKit_ExampleApp1UITests */,
@@ -90,6 +117,31 @@
 				635247B02E131CBB00E54EAF /* BluKit_ExampleApp1UITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		63A185D42E15EBA100188917 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63A185D62E15EBB700188917 /* BluetoothPeripheral.swift */,
+				63A185F92E1C3D4200188917 /* CharacteristicDetailViewModel.swift */,
+				63A185D82E15EC2800188917 /* PeripheralDetailViewModel.swift */,
+				63A185D72E15EBFC00188917 /* PeripheralListViewModel.swift */,
+				63A185F52E1C3A0C00188917 /* ServiceDetailViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63A185D52E15EBA900188917 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63A185F72E1C3CA800188917 /* CharacteristicDetailView.swift */,
+				63A185DE2E15F09200188917 /* PeripheralDetailView.swift */,
+				63A185DD2E15EFFB00188917 /* PeripheralListView.swift */,
+				63A185E62E1999CC00188917 /* PeripheralRowView.swift */,
+				63A185F32E1C39DB00188917 /* ServiceDetailView.swift */,
+				63A185E82E199A0500188917 /* SignalStrengthView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +247,8 @@
 			);
 			mainGroup = 635247902E131CB800E54EAF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6352479A2E131CB800E54EAF /* Products */;
 			projectDirPath = "";
@@ -236,6 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A185FA2E1C3D4200188917 /* CharacteristicDetailViewModel.swift in Sources */,
+				63A185F82E1C3CA800188917 /* CharacteristicDetailView.swift in Sources */,
+				63A185E02E15F16600188917 /* PeripheralListViewModel.swift in Sources */,
+				63A185E72E1999DA00188917 /* PeripheralRowView.swift in Sources */,
+				63A185DF2E15F15F00188917 /* BluetoothPeripheral.swift in Sources */,
+				63A185E92E199A0B00188917 /* SignalStrengthView.swift in Sources */,
+				63A185E12E15F16E00188917 /* PeripheralDetailViewModel.swift in Sources */,
+				63A185E32E15F17B00188917 /* PeripheralDetailView.swift in Sources */,
+				63A185F42E1C39DB00188917 /* ServiceDetailView.swift in Sources */,
+				63A185E22E15F17500188917 /* PeripheralListView.swift in Sources */,
+				63A185F62E1C3A0C00188917 /* ServiceDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +465,8 @@
 				DEVELOPMENT_TEAM = 3Q7NL7A76P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BluKit-ExampleApp1-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find nearby Peripherals";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +495,8 @@
 				DEVELOPMENT_TEAM = 3Q7NL7A76P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BluKit-ExampleApp1-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find nearby Peripherals";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

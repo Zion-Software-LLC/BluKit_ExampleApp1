@@ -2,7 +2,7 @@
 //  BluKit_ExampleApp1UITestsLaunchTests.swift
 //  BluKit_ExampleApp1UITests
 //
-//  Created by David Ferrero on 6/30/25.
+//  Copyright Zion Software, LLC.
 //
 
 import XCTest

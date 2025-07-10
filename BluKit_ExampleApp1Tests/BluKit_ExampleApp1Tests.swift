@@ -2,7 +2,7 @@
 //  BluKit_ExampleApp1Tests.swift
 //  BluKit_ExampleApp1Tests
 //
-//  Created by David Ferrero on 6/30/25.
+//  Copyright Zion Software, LLC.
 //
 
 import Testing
