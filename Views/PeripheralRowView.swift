@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct PeripheralRowView: View {
-    let peripheral: BluetoothPeripheral
+    @ObservedObject var peripheral: BluetoothPeripheral
     let onConnect: () -> Void
     let onDisconnect: () -> Void
+    let onTap: () -> Void
 
     var body: some View {
 
@@ -27,21 +28,37 @@ struct PeripheralRowView: View {
 
             // show Connection Button if Connectable
             if peripheral.isConnectable {
-                if peripheral.peripheral.state != .connected {
-                    Button("Connect") {
-                        onConnect()
+                if peripheral.isConnected {
+                    if peripheral.isAttemptingToDisconnect {
+                        Text("Disconnecting...")
+                    } else {
+                        Button("Disconnect") {
+                            peripheral.isAttemptingToConnect = false
+                            peripheral.isAttemptingToDisconnect =  true
+                            onDisconnect()
+                        }
+                        .buttonStyle(PlainButtonStyle()) // separately tappable within a NavigationLink
+                        .foregroundStyle(.blue)
                     }
-                    .buttonStyle(PlainButtonStyle()) // separately tappable within a NavigationLink
-                    .foregroundStyle(.blue)
-
-                } else {
-                    Button("Disconnect") {
-                        onDisconnect()
+                }
+                else {
+                    if peripheral.isAttemptingToConnect {
+                        Text("Connecting...")
+                    } else {
+                        Button("Connect") {
+                            peripheral.isAttemptingToConnect = true
+                            peripheral.isAttemptingToDisconnect = false
+                            onConnect()
+                        }
+                        .buttonStyle(PlainButtonStyle()) // separately tappable within a NavigationLink
+                        .foregroundStyle(.blue)
                     }
-                    .buttonStyle(PlainButtonStyle()) // separately tappable within a NavigationLink
-                    .foregroundStyle(.blue)
                 }
             }
+        }
+        .contentShape(Rectangle()) // ensure full view is tappable
+        .onTapGesture {
+            onTap()
         }
 
     }

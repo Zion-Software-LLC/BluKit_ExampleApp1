@@ -16,8 +16,16 @@ class CharacteristicDetailViewModel: ObservableObject {
         self.characteristicDetail = characteristicDetail
     }
 
-    deinit {
-        print("*** CharacteristicDetailViewModel.deinit")
+    var name: String {
+        characteristicDetail.name
+    }
+
+    var uuidString: String {
+        characteristicDetail.uuid.uuidString
+    }
+
+    var valueAsString: String {
+        characteristicDetail.valueAsString
     }
 
 }

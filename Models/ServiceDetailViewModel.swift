@@ -23,10 +23,6 @@ class ServiceDetailViewModel: ObservableObject {
         self.serviceDetail = serviceDetail
     }
 
-    deinit {
-        print("*** ServiceDetailViewModel.deinit")
-    }
-
     func onAppear() {
         isVisible = true
         self.discoveredCharacteristics = serviceDetail.discoveredCharacteristics
@@ -49,7 +45,6 @@ class ServiceDetailViewModel: ObservableObject {
 
     func discoveredCharacteristics(_ discoveredCharacteristics: [CharacteristicDetail]) {
         if isVisible { // only publish changes if isVisible
-            print("*** ServiceDetailViewModel.discoveredCharacteristics: \(discoveredCharacteristics.count)")
             self.discoveredCharacteristics = discoveredCharacteristics
         }
     }

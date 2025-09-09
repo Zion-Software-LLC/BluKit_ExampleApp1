@@ -1,0 +1,101 @@
+{
+  "canSendWriteWithoutResponse" : true,
+  "originalIdentifier" : "98E92276-CDC3-7816-4D64-AF0A626A6165",
+  "identifier" : "35779A42-E516-4392-A95A-8E0780067BC4",
+  "advertisementData" : {
+    "timestamp" : 771229714.061818,
+    "localName" : "Wahoo HRM V1.7",
+    "serviceUUIDs" : [
+      "180D"
+    ],
+    "isConnectable" : true,
+    "rxPrimaryPhy" : 1,
+    "rxSecondaryPhy" : 0
+  },
+  "services" : [
+    {
+      "uuid" : "180D",
+      "isPrimary" : true,
+      "characteristics" : [
+        {
+          "valueRecords" : [
+            {
+              "value" : "0x063F",
+              "timestamp" : 1
+            },
+            {
+              "value" : "0x0640",
+              "timestamp" : 2.981202006340027
+            },
+            {
+              "value" : "0x0641",
+              "timestamp" : 4.9561439752578735
+            }
+          ],
+          "uuid" : "2A37",
+          "descriptors" : [
+            {
+              "uuid" : "2902"
+            }
+          ],
+          "properties" : [
+            4
+          ],
+          "value" : "0x0641",
+          "isBroadcasted" : false
+        },
+        {
+          "uuid" : "2A38",
+          "properties" : [
+            1
+          ],
+          "value" : "0x01",
+          "isBroadcasted" : false
+        }
+      ]
+    },
+    {
+      "uuid" : "180A",
+      "isPrimary" : true,
+      "characteristics" : [
+        {
+          "uuid" : "2A23",
+          "properties" : [
+            1
+          ],
+          "value" : "0x55AA55AA55AA55AA",
+          "isBroadcasted" : false
+        },
+        {
+          "uuid" : "2A25",
+          "properties" : [
+            1
+          ],
+          "value" : "0x31353837",
+          "isBroadcasted" : false
+        },
+        {
+          "uuid" : "2A26",
+          "properties" : [
+            1
+          ],
+          "value" : "0x30312E31",
+          "isBroadcasted" : false
+        },
+        {
+          "uuid" : "2A29",
+          "properties" : [
+            1
+          ],
+          "value" : "0x4E6F7264696353656D69636F6E647563746F7200",
+          "isBroadcasted" : false
+        }
+      ]
+    }
+  ],
+  "name" : "Wahoo HRM V1.7",
+  "rssi" : -44,
+  "maxWriteValueLength" : 512,
+  "maxWriteValueLengthWithoutResponse" : 20,
+  "ancsAuthorized" : false
+}

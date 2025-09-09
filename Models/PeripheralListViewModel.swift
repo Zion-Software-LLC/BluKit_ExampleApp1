@@ -19,17 +19,24 @@ class PeripheralListViewModel: ObservableObject {
         self.bluetoothManager = bluetoothManager
     }
 
-    func onAppear() {
+    func listenForDiscoveredPeripheralsChanges() {
         isVisible = true
         self.discoveredPeripherals = bluetoothManager.discoveredPeripherals
         cancellable = bluetoothManager.$discoveredPeripherals.sink(receiveValue: discoveredPeripherals(_:))
     }
 
-    func onDisappear() {
+    func stopListeningForDiscoveredPeripheralsChanges() {
         isVisible = false
-
         cancellable?.cancel()
         cancellable = nil
+    }
+
+    func handleShowPeripheralDetailChange(_ showPeripheralDetail: Bool) {
+        if showPeripheralDetail { // peripheral detail is showing, stop listening for changes for now
+            stopListeningForDiscoveredPeripheralsChanges()
+        } else { // peripheral detail is not showing, start listening for changes again
+            listenForDiscoveredPeripheralsChanges()
+        }
     }
 
     func discoveredPeripherals(_ discoveredPeripherals: [BluetoothPeripheral]) {

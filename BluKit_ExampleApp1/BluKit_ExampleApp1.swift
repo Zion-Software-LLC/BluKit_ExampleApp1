@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BluKit_ExampleApp1: App {
+    let viewModel = PeripheralListViewModel(bluetoothManager: BluetoothManager())
+
     var body: some Scene {
         WindowGroup {
-            PeripheralListView()
+            PeripheralListView(viewModel: viewModel)
         }
     }
 }

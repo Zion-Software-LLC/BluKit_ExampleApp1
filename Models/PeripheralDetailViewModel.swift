@@ -17,12 +17,7 @@ class PeripheralDetailViewModel: ObservableObject {
     var cancellable: AnyCancellable?
 
     init(peripheral: BluetoothPeripheral) {
-        print("*** PeripheralDetailViewModel(\(peripheral.name))")
         self.peripheral = peripheral
-    }
-
-    deinit {
-        print("*** PeripheralDetailViewModel.deinit")
     }
 
     func onAppear() {
@@ -41,7 +36,6 @@ class PeripheralDetailViewModel: ObservableObject {
 
     func discoveredServices(_ discoveredServices: [ServiceDetail]) {
         if isVisible { // only publish changes if isVisible
-            print("*** PeripheralDetailViewModel.discoveredServices: \(discoveredServices.count)")
             self.discoveredServices = discoveredServices
         }
     }

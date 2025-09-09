@@ -1,6 +1,6 @@
 //
 //  BluetoothPeripheral.swift
-//  BluKit_ExampleApp1
+//  BlueKit_ExampleApp1
 //
 //  Copyright Zion Software, LLC.
 //
@@ -21,7 +21,14 @@ class BluetoothPeripheral: NSObject, Identifiable, ObservableObject {
 
     let advertisementData: [String: Any]
     let rssi: NSNumber
-    @Published var isConnected: Bool = false
+    @Published var isConnected: Bool = false {
+        didSet {
+            isAttemptingToConnect = false
+            isAttemptingToDisconnect = false
+        }
+    }
+    @Published var isAttemptingToConnect: Bool = false
+    @Published var isAttemptingToDisconnect: Bool = false
     @Published var discoveredServices: [ServiceDetail] = []
 
     var isConnectable: Bool {
@@ -95,6 +102,10 @@ struct CharacteristicDetail: Identifiable {
 
     var value: Data? {
         characteristic.value
+    }
+
+    var valueAsString: String {
+        value?.base64EncodedString() ?? "--"
     }
 
     private func characteristicNameForUUID(_ uuid: CBUUID) -> String {

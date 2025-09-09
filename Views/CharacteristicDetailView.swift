@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct CharacteristicDetailView: View {
-    @StateObject private var viewModel: CharacteristicDetailViewModel
-
-    init(characteristicDetail: CharacteristicDetail) {
-        _viewModel = StateObject(wrappedValue: CharacteristicDetailViewModel(characteristicDetail: characteristicDetail))
-    }
+    @ObservedObject var viewModel: CharacteristicDetailViewModel
 
     var body: some View {
         VStack {
-            Text(viewModel.characteristicDetail.name)
-            Text(viewModel.characteristicDetail.uuid.uuidString)
-            Text(viewModel.characteristicDetail.value?.base64EncodedString() ?? "--")
+            Text(viewModel.name)
+            Text(viewModel.uuidString)
+            Text(viewModel.valueAsString)
         }
     }
 }

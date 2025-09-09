@@ -8,64 +8,44 @@
 import SwiftUI
 
 struct PeripheralListView: View {
-    @StateObject private var viewModel = PeripheralListViewModel()
+    @ObservedObject var viewModel: PeripheralListViewModel
     @State private var selectedPeripheral: BluetoothPeripheral?
+    @State private var showPeripheralDetail = false
 
     var body: some View {
 
         NavigationStack {
-            List(viewModel.discoveredPeripherals) { peripheral in
-                PeripheralRowView(
-                    peripheral: peripheral,
-                    onConnect: {
-                        viewModel.connectPeripheral(peripheral)
-                    },
-                    onDisconnect: {
-                        viewModel.disconnectPeripheral(peripheral)
-                    }
-                )
-                .onTapGesture {
-                    selectedPeripheral = peripheral
+            VStack {
+                List(viewModel.discoveredPeripherals) { peripheral in
+                    PeripheralRowView(
+                        peripheral: peripheral,
+                        onConnect: {
+                            viewModel.connectPeripheral(peripheral)
+                        },
+                        onDisconnect: {
+                            viewModel.disconnectPeripheral(peripheral)
+                        },
+                        onTap: {
+                            selectedPeripheral = peripheral
+                            showPeripheralDetail = true
+                        }
+                    )
                 }
             }
-            .navigationTitle("Bluetooth Peripherals")
-            .navigationDestination(item: $selectedPeripheral) { peripheral in
-                PeripheralDetailView(peripheral: peripheral)
+            .navigationTitle("BluKit Example App")
+            .navigationDestination(isPresented: $showPeripheralDetail) {
+                // a SwiftUI bug that this closure is called
+                // even when showPeripheralDetail is false after it is set to true once
+                if showPeripheralDetail, let selectedPeripheral {
+                    PeripheralDetailView(viewModel: PeripheralDetailViewModel(peripheral: selectedPeripheral))
+                }
             }
         }
         .onAppear {
-            print("*** PeripheralListView.onAppear()")
-            viewModel.onAppear()
+            viewModel.listenForDiscoveredPeripheralsChanges()
         }
-        .onDisappear {
-            print("*** PeripheralListView.onDisappear()")
-            viewModel.onDisappear()
+        .onChange(of: showPeripheralDetail) {
+            viewModel.handleShowPeripheralDetailChange(showPeripheralDetail)
         }
-
-//
-//        NavigationView {
-//            List(viewModel.discoveredPeripherals) { peripheral in
-//                NavigationLink(destination: PeripheralDetailView(peripheral: peripheral)) {
-//                    PeripheralRowView(
-//                        peripheral: peripheral,
-//                        onConnect: {
-//                            viewModel.connectPeripheral(peripheral)
-//                        },
-//                        onDisconnect: {
-//                            viewModel.disconnectPeripheral(peripheral)
-//                        }
-//                    )
-//                }
-//            }
-//            .navigationTitle("Bluetooth Peripherals")
-//            .onAppear {
-//                print("*** PeripheralListView.onAppear()")
-//                viewModel.onAppear()
-//            }
-//            .onDisappear {
-//                print("*** PeripheralListView.onDisappear()")
-//                viewModel.onDisappear()
-//            }
-//        }
     }
 }
