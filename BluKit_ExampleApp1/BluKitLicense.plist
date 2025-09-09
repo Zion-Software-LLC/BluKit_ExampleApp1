@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>License Created</key>
+	<string>2025-07-29T04:42:46Z</string>
+	<key>License Key</key>
+	<string>0xE6E0178FACA57EFFE333F88A13805BD0EA3BB8DD37676DCCC3C5D97769421CB8</string>
+	<key>Licensed Bundle Identifier</key>
+	<string>com.zionsoftware.BluKit-ExampleApp1</string>
+	<key>Licensed Maximum Framework Version</key>
+	<integer>2</integer>
+	<key>Licensed OS</key>
+	<dict>
+		<key>iOS</key>
+		<string>0x4EF16D66A39FF20284E7E3E9F30253F98CA8048F9003608038D96F18F1D71B11</string>
+		<key>iPadOS</key>
+		<string>0x1CEAD387825995810DD0B9420137EA01CDBB1CCEF448C03F0AE52E89A9947226</string>
+		<key>macOS</key>
+		<string>0xEE9CCE0499CED31100A4F9373E317D96B6077990CC76CF15D2C5EF1DAC136359</string>
+	</dict>
+</dict>
+</plist>

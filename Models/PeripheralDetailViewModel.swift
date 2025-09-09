@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import CoreBluetooth
+import BluKit
 
 class PeripheralDetailViewModel: ObservableObject {
     let peripheral: BluetoothPeripheral

@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import CoreBluetooth
+import BluKit
 
 class ServiceDetailViewModel: ObservableObject {
     let serviceDetail: ServiceDetail

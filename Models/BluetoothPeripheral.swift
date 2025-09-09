@@ -7,9 +7,10 @@
 
 import Foundation
 import CoreBluetooth
+import BluKit
 
 class BluetoothPeripheral: NSObject, Identifiable, ObservableObject {
-    let peripheral: CBPeripheral
+    let peripheral: Peripheral
 
     var id: UUID {
         peripheral.identifier
@@ -36,7 +37,7 @@ class BluetoothPeripheral: NSObject, Identifiable, ObservableObject {
         return isConnectable?.boolValue ?? false
     }
 
-    init(peripheral: CBPeripheral, advertisementData: [String : Any], rssi: NSNumber) {
+    init(peripheral: Peripheral, advertisementData: [String : Any], rssi: NSNumber) {
         self.peripheral = peripheral
         self.advertisementData = advertisementData
         self.rssi = rssi
@@ -49,7 +50,7 @@ class BluetoothPeripheral: NSObject, Identifiable, ObservableObject {
 }
 
 class ServiceDetail: NSObject, Identifiable, ObservableObject {
-    let service: CBService
+    let service: Service
 
     var id: CBUUID {
         service.uuid
@@ -62,24 +63,11 @@ class ServiceDetail: NSObject, Identifiable, ObservableObject {
     }
 
     var name: String {
-        serviceNameForUUID(uuid)
+        service.displayName
     }
 
-    init(service: CBService) {
+    init(service: Service) {
         self.service = service
-    }
-
-    private func serviceNameForUUID(_ uuid: CBUUID) -> String {
-        // Add known service mappings
-        let knownServices: [String: String] = [
-            "180F": "Battery Service",
-            "180A": "Device Information",
-            "1800": "Generic Access",
-            "1801": "Generic Attribute"
-            // Add more known services as needed
-        ]
-
-        return knownServices[uuid.uuidString.prefix(4).uppercased()] ?? "Unknown Service"
     }
 
     // Implement Equatable to prevent unnecessary redraws
@@ -89,7 +77,7 @@ class ServiceDetail: NSObject, Identifiable, ObservableObject {
 }
 
 struct CharacteristicDetail: Identifiable {
-    let characteristic: CBCharacteristic
+    let characteristic: Characteristic
     let id = UUID()
 
     var uuid: CBUUID {
@@ -97,7 +85,7 @@ struct CharacteristicDetail: Identifiable {
     }
 
     var name: String {
-        characteristicNameForUUID(uuid)
+        characteristic.displayName
     }
 
     var value: Data? {
@@ -105,20 +93,7 @@ struct CharacteristicDetail: Identifiable {
     }
 
     var valueAsString: String {
-        value?.base64EncodedString() ?? "--"
-    }
-
-    private func characteristicNameForUUID(_ uuid: CBUUID) -> String {
-        // Add known characteristics mappings
-        let knownCharacteristics: [String: String] = [
-            "180F": "Battery Service",
-            "180A": "Device Information",
-            "1800": "Generic Access",
-            "1801": "Generic Attribute"
-            // Add more known characteristics as needed
-        ]
-
-        return knownCharacteristics[uuid.uuidString.prefix(4).uppercased()] ?? "Unknown Characteristic"
+        characteristic.description
     }
 
     // Implement Equatable to prevent unnecessary redraws
