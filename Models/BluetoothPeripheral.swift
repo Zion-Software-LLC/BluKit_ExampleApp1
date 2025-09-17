@@ -1,6 +1,6 @@
 //
 //  BluetoothPeripheral.swift
-//  BlueKit_ExampleApp1
+//  BluKit_ExampleApp1
 //
 //  Copyright Zion Software, LLC.
 //
