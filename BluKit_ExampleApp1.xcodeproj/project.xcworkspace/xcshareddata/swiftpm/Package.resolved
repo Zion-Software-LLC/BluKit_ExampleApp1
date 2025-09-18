@@ -1,0 +1,15 @@
+{
+  "originHash" : "526d1197a5b92936f256b3b545a4cd65b299738134bbe75be37e20a3739b97ba",
+  "pins" : [
+    {
+      "identity" : "blukitpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Zion-Software-LLC/BluKitPackage.git",
+      "state" : {
+        "revision" : "2c59e14451f53ede3666feaf920a730e88262698",
+        "version" : "2.0.6"
+      }
+    }
+  ],
+  "version" : 3
+}

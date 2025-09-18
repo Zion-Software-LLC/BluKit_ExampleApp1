@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63798A772E7B8EC7001FD600 /* BluKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63798A762E7B8EC7001FD600 /* BluKit */; };
 		63A185DF2E15F15F00188917 /* BluetoothPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D62E15EBB700188917 /* BluetoothPeripheral.swift */; };
 		63A185E02E15F16600188917 /* PeripheralListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D72E15EBFC00188917 /* PeripheralListViewModel.swift */; };
 		63A185E12E15F16E00188917 /* PeripheralDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A185D82E15EC2800188917 /* PeripheralDetailViewModel.swift */; };
@@ -79,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A77BA52E263CC700A688D3 /* BluKit in Frameworks */,
+				63798A772E7B8EC7001FD600 /* BluKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +177,7 @@
 			name = BluKit_ExampleApp1;
 			packageProductDependencies = (
 				63A77BA42E263CC700A688D3 /* BluKit */,
+				63798A762E7B8EC7001FD600 /* BluKit */,
 			);
 			productName = BluKit_ExampleApp1;
 			productReference = 635247992E131CB800E54EAF /* BluKit_ExampleApp1.app */;
@@ -259,7 +262,7 @@
 			mainGroup = 635247902E131CB800E54EAF;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				63A77BA32E263CC700A688D3 /* XCLocalSwiftPackageReference "../BluKitPackage" */,
+				63798A752E7B8EC7001FD600 /* XCRemoteSwiftPackageReference "BluKitPackage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6352479A2E131CB800E54EAF /* Products */;
@@ -642,14 +645,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		63A77BA32E263CC700A688D3 /* XCLocalSwiftPackageReference "../BluKitPackage" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../BluKitPackage;
+/* Begin XCRemoteSwiftPackageReference section */
+		63798A752E7B8EC7001FD600 /* XCRemoteSwiftPackageReference "BluKitPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Zion-Software-LLC/BluKitPackage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.6;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		63798A762E7B8EC7001FD600 /* BluKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63798A752E7B8EC7001FD600 /* XCRemoteSwiftPackageReference "BluKitPackage" */;
+			productName = BluKit;
+		};
 		63A77BA42E263CC700A688D3 /* BluKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BluKit;
